@@ -44,12 +44,6 @@ class AddonController extends Controller
      */
     public function store(Request $request)
     {
-
-        if (env('DEMO_MODE') == 'On') {
-            flash(translate('This action is disabled in demo mode'))->error();
-            return back();
-        }
-
         if (class_exists('ZipArchive')) {
             if ($request->hasFile('addon_zip')) {
                 // Create update directory.

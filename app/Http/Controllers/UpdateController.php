@@ -38,10 +38,6 @@ use ZipArchive;
 class UpdateController extends Controller
 {
     public function step0(Request $request) {
-        if (env('DEMO_MODE') == 'On') {
-            flash(translate('This action is disabled in demo mode'))->error();
-            return back();
-        }
         if ($request->hasFile('update_zip')) {
             if (class_exists('ZipArchive')) {
                 // Create update directory.

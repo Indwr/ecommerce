@@ -70,11 +70,6 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if(env('DEMO_MODE') == 'On'){
-            flash(translate('Sorry! the action is not permitted in demo '))->error();
-            return back();
-        }
-
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;

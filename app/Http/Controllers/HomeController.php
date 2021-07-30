@@ -140,11 +140,6 @@ class HomeController extends Controller
 
     public function customer_update_profile(Request $request)
     {
-        if(env('DEMO_MODE') == 'On'){
-            flash(translate('Sorry! the action is not permitted in demo '))->error();
-            return back();
-        }
-
         $user = Auth::user();
         $user->name = $request->name;
         $user->address = $request->address;
@@ -170,11 +165,6 @@ class HomeController extends Controller
 
     public function seller_update_profile(Request $request)
     {
-        if(env('DEMO_MODE') == 'On'){
-            flash(translate('Sorry! the action is not permitted in demo '))->error();
-            return back();
-        }
-
         $user = Auth::user();
         $user->name = $request->name;
         $user->address = $request->address;

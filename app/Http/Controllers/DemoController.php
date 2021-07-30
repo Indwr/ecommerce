@@ -42,18 +42,12 @@ class DemoController extends Controller
 
     public function cron_1()
     {
-        if (env('DEMO_MODE') != 'On') {
-            return back();
-        }
         $this->drop_all_tables();
         $this->import_demo_sql();
     }
 
     public function cron_2()
     {
-        if (env('DEMO_MODE') != 'On') {
-            return back();
-        }
         $this->remove_folder();
         $this->extract_uploads();
     }
