@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Attribute;
 use App\AttributeTranslation;
-use CoreComponentRepository;
+// use CoreComponentRepository;
 
 class AttributeController extends Controller
 {
@@ -16,7 +16,7 @@ class AttributeController extends Controller
      */
     public function index()
     {
-        CoreComponentRepository::instantiateShopRepository();
+        // CoreComponentRepository::instantiateShopRepository();
         $attributes = Attribute::orderBy('created_at', 'desc')->get();
         return view('backend.product.attribute.index', compact('attributes'));
     }

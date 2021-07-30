@@ -17,7 +17,7 @@ use Carbon\Carbon;
 use ImageOptimizer;
 use DB;
 use Combinations;
-use CoreComponentRepository;
+// use CoreComponentRepository;
 use Illuminate\Support\Str;
 use Artisan;
 
