@@ -108,13 +108,14 @@
                                 $qty = 0;
                                 if($product->variant_product) {
                                     foreach ($product->stocks as $key => $stock) {
+
                                         $qty += $stock->qty;
                                         echo $stock->variant.' - '.$stock->qty.'<br>';
                                     }
                                 }
                                 else {
                                     //$qty = $product->current_stock;
-                                    $qty = $product->stocks->first()->qty;
+                                    $qty = $product->stocks->first()['qty'];
                                     echo $qty;
                                 }
                             @endphp

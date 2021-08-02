@@ -77,9 +77,9 @@ class BusinessSettingsController extends Controller
      */
     public function payment_method_update(Request $request)
     {
-        foreach ($request->types as $key => $type) {
-                $this->overWriteEnvFile($type, $request[$type]);
-        }
+        // foreach ($request->types as $key => $type) {
+        //         $this->overWriteEnvFile($type, $request[$type]);
+        // }
 
         $business_settings = BusinessSetting::where('type', $request->payment_method.'_sandbox')->first();
         // dd($business_settings->type);

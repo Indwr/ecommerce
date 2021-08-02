@@ -1,7 +1,9 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-
+@php
+    $address = json_decode($order['shipping_address']);
+@endphp
     <form action="{!!route('payment.rozer')!!}" method="POST" id='rozer-pay' style="display: none;">
         <!-- Note that the amount is in paise = 50 INR -->
         <!--amount need to be in paisa-->
@@ -12,8 +14,8 @@
                 data-name="{{ env('APP_NAME') }}"
                 data-description="Cart Payment"
                 data-image="{{ uploaded_asset(get_setting('header_logo')) }}"
-                data-prefill.name= {{ Session::get('shipping_info')['name'] }}
-                data-prefill.email= {{ Session::get('shipping_info')['email'] }}
+                data-prefill.name= {{ $address->name }}
+                data-prefill.email= {{ $address->email }}
                 data-theme.color="#ff7529">
         </script>
         <input type="hidden" name="_token" value="{!!csrf_token()!!}">

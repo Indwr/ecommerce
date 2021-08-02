@@ -905,7 +905,7 @@ if (!function_exists('getFileBaseURL')) {
             return env('AWS_URL').'/';
         }
         else {
-            return getBaseURL().'public/';
+            return getBaseURL().'/';
         }
     }
 }

@@ -98,7 +98,7 @@ class ProductController extends Controller
         $query = null;
         $seller_id = null;
         $sort_search = null;
-        $products = Product::orderBy('created_at', 'desc');
+        $products = Product::with('stocks')->orderBy('created_at', 'desc');
         if ($request->has('user_id') && $request->user_id != null) {
             $products = $products->where('user_id', $request->user_id);
             $seller_id = $request->user_id;
@@ -118,7 +118,7 @@ class ProductController extends Controller
 
         $products = $products->paginate(15);
         $type = 'All';
-
+        // dd($products);
         return view('backend.product.products.index', compact('products','type', 'col_name', 'query', 'seller_id', 'sort_search'));
     }
 

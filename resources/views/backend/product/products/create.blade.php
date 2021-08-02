@@ -243,7 +243,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div id="show-hide-div">
                             <div class="form-group row">
                                 <label class="col-md-3 col-from-label">{{translate('Quantity')}} <span class="text-danger">*</span></label>
@@ -408,7 +408,7 @@
                             </div>
                             @endforeach
                         </div>
-                        
+
                         <div class="form-group row">
                             <label class="col-md-6 col-from-label">{{translate('Is Product Quantity Mulitiply')}}</label>
                             <div class="col-md-6">
@@ -510,7 +510,7 @@
                         @endif
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Featured')}}</h5>
@@ -726,7 +726,7 @@
         $.each($("#choice_attributes option:selected"), function(){
             add_more_customer_choice_option($(this).val(), $(this).text());
         });
-        
+
         update_sku();
     });
 

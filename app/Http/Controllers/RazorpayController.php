@@ -22,6 +22,7 @@ class RazorpayController extends Controller
         if(Session::has('payment_type')){
             if(Session::get('payment_type') == 'cart_payment'){
                 $order = Order::findOrFail(Session::get('order_id'));
+                // dd($order);
                 return view('frontend.razor_wallet.order_payment_Razorpay', compact('order'));
             }
             elseif (Session::get('payment_type') == 'wallet_payment') {
