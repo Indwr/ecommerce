@@ -863,7 +863,7 @@ if (! function_exists('my_asset')) {
             if(end($arr) == 'test'){
                 return app('url')->asset('/'.$path, $secure);
             }else{
-                return app('url')->asset('/public'.$path, $secure);
+                return app('url')->asset('/public/'.$path, $secure);
             }
         }
     }
@@ -883,7 +883,7 @@ if (! function_exists('static_asset')) {
         if(end($arr) == 'test'){
             return app('url')->asset('/'.$path, $secure);
         }else{
-            return app('url')->asset('/public'.$path, $secure);
+            return app('url')->asset('/public/'.$path, $secure);
         }
     }
 }
